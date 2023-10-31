@@ -43,13 +43,14 @@ public:
         }
 
     }
+
     void changeInCoins() {
         int total = (int) (change * 100);
         int ten = total / 1000;
-        int five = (ten % 1000) / 500;
+        int five = (total % 1000) / 500;
         int one = ((total % 1000) % 500) / 100;
-        int half = (((total % 1000) % 500) / 100) / 50;
-        int rest = ((((total % 1000) % 500) / 100) / 50) % 50;
+        int half = (((total % 1000) % 500) % 100) / 50;
+        int rest = ((((total % 1000) % 500) % 100) % 50) % 50;
         std::cout << "\tThis is your total change: " << change << "\n\t"
                   << "and this is a breakdown of what coins you will receive\n\t"
                   << "------------------------------------------------\n"

@@ -6,7 +6,8 @@ using namespace std;
 int main() {
 
     double userCash;
-    char userChoice;
+    string userChoice;
+    char cleanUserChoice;
 
     do {
 
@@ -19,14 +20,16 @@ int main() {
 
         cin >> userCash >> userChoice;
 
-        CoffeeAction coffeeAction(userCash, userChoice);
+        cleanUserChoice = userChoice.at(0);
 
-        if (coffeeAction.getChange() >= 0) {
-            cout << "\n\tEnjoy your " << coffeeAction.getProductName() << endl;
+        CoffeeAction coffeeAction(userCash, cleanUserChoice);
+
+        if (coffeeAction.getChange() >= 0 && !coffeeAction.getProductName().empty()) {
+            cout << "\n\tEnjoy your " << coffeeAction.getProductName() << "." << endl;
             break;
+        } else {
+            cout << "\n\tYou have chosen a invalid character or not entered enough money, please try again.\n" << endl;
         }
-
-        cout << "\tNot enough money, try again." << endl;
 
     } while (true);
 }
