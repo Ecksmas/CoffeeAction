@@ -53,7 +53,7 @@ public:
         int rest = ((((total % 1000) % 500) % 100) % 50) % 50;
         std::cout << "\tThis is your total change: " << change << "\n\t"
                   << "and this is a breakdown of what coins you will receive\n\t"
-                  << "------------------------------------------------\n"
+                  << "-------------------------------------\n"
                   << "\tTen\tFive\tOne\tHalf\tRest\n\t"
                   << ten << "\t" << five << "\t" << one << "\t" << half << "\t" << rest << std::endl;
     }
